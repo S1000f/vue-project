@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import DataBinding from '../views/DataBinding.vue'
 import Rendering from '../views/Rendering.vue'
 import Event from '@/views/Event'
+import ComputedAndWatch from '@/views/ComputedAndWatch'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/event',
     name: 'Event',
     component: Event
+  },
+  {
+    path: '/computed',
+    name: 'ComputedAndWatch',
+    component: ComputedAndWatch
   }
 ]
 

@@ -4,7 +4,8 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/databinding">Data Binding</router-link> |
     <router-link to="/rendering">Renderings</router-link> |
-    <router-link to="/event">Event</router-link>
+    <router-link to="/event">Event</router-link> |
+    <router-link to="/computed">Computed And Watch</router-link>
   </div>
   <router-view/>
 </template>
