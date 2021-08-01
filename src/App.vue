@@ -5,7 +5,8 @@
     <router-link to="/databinding">Data Binding</router-link> |
     <router-link to="/rendering">Renderings</router-link> |
     <router-link to="/event">Event</router-link> |
-    <router-link to="/computed">Computed And Watch</router-link>
+    <router-link to="/computed">Computed And Watch</router-link> |
+    <router-link to="/apidatabinding">API data binding</router-link>
   </div>
   <router-view/>
 </template>

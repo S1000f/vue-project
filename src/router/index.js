@@ -4,6 +4,7 @@ import DataBinding from '../views/DataBinding.vue'
 import Rendering from '../views/Rendering.vue'
 import Event from '@/views/Event'
 import ComputedAndWatch from '@/views/ComputedAndWatch'
+import ApiDataBinding from '@/views/ApiDataBinding'
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     path: '/computed',
     name: 'ComputedAndWatch',
     component: ComputedAndWatch
+  },
+  {
+    path: '/apidatabinding',
+    name: 'ApiDataBinding',
+    component: ApiDataBinding
   }
 ]
 
