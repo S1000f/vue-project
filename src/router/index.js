@@ -5,6 +5,7 @@ import Rendering from '../views/Rendering.vue'
 import Event from '@/views/Event'
 import ComputedAndWatch from '@/views/ComputedAndWatch'
 import ApiDataBinding from '@/views/ApiDataBinding'
+import NestedComponent from '@/views/NestedComponent'
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
     path: '/apidatabinding',
     name: 'ApiDataBinding',
     component: ApiDataBinding
+  },
+  {
+    path: '/nestedcomponent',
+    name: 'NestedComponent',
+    component: NestedComponent
   }
 ]
 
