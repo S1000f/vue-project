@@ -7,7 +7,9 @@
     <router-link to="/event">Event</router-link> |
     <router-link to="/computed">Computed And Watch</router-link> |
     <router-link to="/apidatabinding">API data binding</router-link> |
-    <router-link to="/nestedcomponent">Components</router-link>
+    <router-link to="/nestedcomponent">Components</router-link> |
+    <router-link to="/slot">Slot</router-link> |
+    <router-link to="/provider">Provider / Inject</router-link>
   </div>
   <router-view/>
 </template>

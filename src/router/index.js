@@ -6,8 +6,15 @@ import Event from '@/views/Event'
 import ComputedAndWatch from '@/views/ComputedAndWatch'
 import ApiDataBinding from '@/views/ApiDataBinding'
 import NestedComponent from '@/views/NestedComponent'
+import SlotModalUse from '@/views/SlotModalUse'
+import Provider from '@/views/Provider'
 
 const routes = [
+  {
+    path: '/provider',
+    name: 'Provider',
+    component: Provider
+  },
   {
     path: '/',
     name: 'Home',
@@ -50,6 +57,11 @@ const routes = [
     path: '/nestedcomponent',
     name: 'NestedComponent',
     component: NestedComponent
+  },
+  {
+    path: '/slot',
+    name: 'SlotModalUse',
+    component: SlotModalUse
   }
 ]
 

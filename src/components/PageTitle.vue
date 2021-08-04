@@ -25,22 +25,36 @@
   <div>
     <h1>{{msg}}</h1>
   </div>
+  <div>
+    <button type="button" @click="changeSyncMe()">Change sync me button</button>
+  </div>
 </template>
 <script>
   export default {
     data() {
       return {
-        msg: 'dont touch me'
+        msg: 'dont touch me',
+        toParent: 'message from child component',
+        syncMe: 'sync me'
       }
     },
+
+    mounted() {
+      this.$emit('send-message', this.toParent);
+    },
+
     methods: {
       childFunc() {
         console.log('click event!!!!');
       },
       childFun() {
         document.write('ahoy!!!!');
+      },
+      changeSyncMe() {
+        this.syncMe = 'changed syncMe props'
       }
     },
+    
     props: {
       titled: {
         type: String,
