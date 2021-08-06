@@ -8,6 +8,8 @@ import ApiDataBinding from '@/views/ApiDataBinding'
 import NestedComponent from '@/views/NestedComponent'
 import SlotModalUse from '@/views/SlotModalUse'
 import Provider from '@/views/Provider'
+import Calculator from '@/views/Calculator'
+import CompositionCalc from '@/views/CompositionCalc'
 
 const routes = [
   {
@@ -62,6 +64,16 @@ const routes = [
     path: '/slot',
     name: 'SlotModalUse',
     component: SlotModalUse
+  },
+  {
+    path: '/calc',
+    name: 'Calculator',
+    component: Calculator
+  },
+  {
+    path: '/compoCalc',
+    name: 'CompositionCalc',
+    component: CompositionCalc
   }
 ]
 

@@ -9,7 +9,9 @@
     <router-link to="/apidatabinding">API data binding</router-link> |
     <router-link to="/nestedcomponent">Components</router-link> |
     <router-link to="/slot">Slot</router-link> |
-    <router-link to="/provider">Provider / Inject</router-link>
+    <router-link to="/provider">Provider / Inject</router-link> |
+    <router-link to="/calc">Calculator1</router-link> |
+    <router-link to="/compoCalc">Composition Calculator</router-link>
   </div>
   <router-view/>
 </template>

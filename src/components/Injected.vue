@@ -1,4 +1,5 @@
 <template>
+  <pre>{{$data}}</pre>
   <div>{{itemss}}</div>
   <div>{{injectedMsg}}</div>
 </template>
@@ -13,7 +14,6 @@ export default {
 
   data() {
     return {
-      items: this.itemss,
       injectedMsg: this.itemLength
     }
   }
