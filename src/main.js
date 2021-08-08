@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import mixins from './mixins'
 import i18nPlugin from './plugins/i18n'
+import store from './store'
 
 const i18nStrings = {
   en: {
@@ -15,6 +16,7 @@ const i18nStrings = {
 
 createApp(App)
 .use(router)
+.use(store)
 .use(i18nPlugin, i18nStrings)
 .mixin(mixins)
 .directive('focus', {
@@ -23,3 +25,5 @@ createApp(App)
   }
 })
 .mount('#app')
+
+window.Kakao.init("");

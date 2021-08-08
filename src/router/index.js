@@ -10,8 +10,20 @@ import SlotModalUse from '@/views/SlotModalUse'
 import Provider from '@/views/Provider'
 import Calculator from '@/views/Calculator'
 import CompositionCalc from '@/views/CompositionCalc'
+import StoreAccess from '@/views/StoreAccess'
+import Login from '@/views/Login'
 
 const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/store',
+    name: 'StoreAccess',
+    component: StoreAccess
+  },
   {
     path: '/provider',
     name: 'Provider',

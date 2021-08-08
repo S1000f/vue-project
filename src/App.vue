@@ -11,7 +11,9 @@
     <router-link to="/slot">Slot</router-link> |
     <router-link to="/provider">Provider / Inject</router-link> |
     <router-link to="/calc">Calculator1</router-link> |
-    <router-link to="/compoCalc">Composition Calculator</router-link>
+    <router-link to="/compoCalc">Composition Calculator</router-link> |
+    <router-link to="/store">Vuex</router-link> |
+    <router-link to="/login">Login</router-link>
   </div>
   <router-view/>
 </template>
