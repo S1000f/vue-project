@@ -1,4 +1,4 @@
-<template>
+<template v-if="ok">
    <div>
      <a id="custom-login-btn" @click="kakaoLogin()">
        KAKAO login
@@ -14,7 +14,7 @@
     components: {},
     data() {
       return {
-        sampleData: ''
+        ok: false
       };
     },
     setup() {},
