@@ -19,6 +19,28 @@
    <div>
      <input type="text" @keyup.enter="one()" placeholder="press enter here">
    </div>
+   <div>
+     <button type="button" @click="handleClick($event)">console log Event Object</button>
+   </div>
+   <div>
+      <button type="button" @click.right="rightClick()">only mouse right button click</button>
+    </div>
+    <div @click="print('div1')">
+      div1
+      <div @click.stop="print('div2')">div2</div>
+    </div>
+    <div @click="print('div1')">
+      div1
+      <a href="https://naver.com" @click.prevent="print('div2')">div2</a>
+    </div>
+    <div>
+      <input type="text" @input="inputHandler($event)"/>
+      <div><p>{{typing}}</p></div>
+    </div>
+    <div>
+      <input type="text" v-model="imeSucks" />
+      <div><p>{{imeSucks}}</p></div>
+    </div>
 </template>
 <script>
   export default {
@@ -26,6 +48,8 @@
     components: {},
     data() {
       return {
+        imeSucks: "",
+        typing: "",
         counter: 0,
         selectedCity: '',
         selected: ''
@@ -36,6 +60,22 @@
     mounted() {},
     unmounted() {},
     methods: {
+      inputHandler(_event) {
+        this.typing = _event.target.value;
+      },
+
+      print(_msg) {
+        console.log(_msg)
+      },
+
+      rightClick() {
+        alert("right!")
+      },
+
+      handleClick(_param) {
+        console.log(_param)
+      },
+
       increaseCounter() {
         this.counter = this.counter + 1;
       },

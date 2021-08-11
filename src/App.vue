@@ -1,9 +1,9 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
     <router-link to="/databinding">Data Binding</router-link> |
     <router-link to="/rendering">Renderings</router-link> |
+    <router-link to="/template-directive">Template directive</router-link> |
     <router-link to="/event">Event</router-link> |
     <router-link to="/computed">Computed And Watch</router-link> |
     <router-link to="/apidatabinding">API data binding</router-link> |

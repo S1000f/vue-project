@@ -56,7 +56,7 @@
         numberModel: 3,
         message: 'this is a textarea input form',
         city: '064',
-        checkedd: true,
+        checkedd: "nope!!",
         checkeda: [],
         cat: "Cat",
         picked: '',

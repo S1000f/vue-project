@@ -12,8 +12,14 @@ import Calculator from '@/views/Calculator'
 import CompositionCalc from '@/views/CompositionCalc'
 import StoreAccess from '@/views/StoreAccess'
 import Login from '@/views/Login'
+import TemplateDirective from '@/views/TemplateDirective'
 
 const routes = [
+  {
+    path: '/template-directive',
+    name: 'TemplateDirective',
+    component: TemplateDirective
+  },
   {
     path: '/login',
     name: 'Login',
@@ -33,14 +39,6 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackPrefetch: true */ '../views/About.vue')
   },
   {
     path: '/databinding',
