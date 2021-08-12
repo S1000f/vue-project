@@ -35,6 +35,10 @@
     <img :src="imgSrc">
   </div>
   <div>
+    <input type="file" @change="changeImg($event)" />
+    <div v-if="preview"><img :src="preview"></div>
+  </div>
+  <div>
     <input type="text" v-model="mustInput">
     <button type="button" :disabled="mustInput==''">click here</button>
   </div>
@@ -50,6 +54,7 @@
     components: {},
     data() {
       return {
+        preview: '',
         title: 'World',
         htmlString: '<p style="color:red;">This is a red string.</p>',
         valueModel: 'Milly the cat',
@@ -79,7 +84,15 @@
     created() {},
     mounted() {},
     unmounted() {},
-    method: {}
+    methods: {
+      changeImg(_event) {
+        let file = _event.target.files[0];
+
+        if (file && file.type.match(/^image\/(png|jpeg)$/)) {
+          this.preview = window.URL.createObjectURL(file);
+        }
+      }
+    }
   }
 </script>
 <style scoped>
