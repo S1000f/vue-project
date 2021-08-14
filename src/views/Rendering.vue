@@ -14,9 +14,9 @@
          <tr :key="index" v-for="(product, index) in productList">
            <td>{{index + 1}}</td>
            <td>{{product.product_name}}</td>
-           <td>{{product.price}}</td>
+           <td>{{ $localeNum(product.price) }}</td>
            <td>{{product.category}}</td>
-           <td>{{product.delivery_price}}</td>
+           <td>{{ $localeNum(product.delivery_price) }}</td>
          </tr>
        </tbody>
      </table>

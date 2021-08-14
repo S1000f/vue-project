@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import mixins from './mixins'
 import i18nPlugin from './plugins/i18n'
+import localeString from './plugins/localeString'
 import store from './store'
 
 const i18nStrings = {
@@ -18,6 +19,7 @@ createApp(App)
 .use(router)
 .use(store)
 .use(i18nPlugin, i18nStrings)
+.use(localeString)
 .mixin(mixins)
 .directive('focus', {
   mounted(el) {
