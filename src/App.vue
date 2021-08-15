@@ -13,7 +13,8 @@
     <router-link to="/calc">Calculator1</router-link> |
     <router-link to="/compoCalc">Composition Calculator</router-link> |
     <router-link to="/store">Vuex</router-link> |
-    <router-link to="/login">Login</router-link>
+    <router-link to="/login">Login</router-link> |
+    <router-link to="/transition">Transition</router-link>
   </div>
   <router-view/>
 </template>

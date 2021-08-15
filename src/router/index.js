@@ -13,8 +13,14 @@ import CompositionCalc from '@/views/CompositionCalc'
 import StoreAccess from '@/views/StoreAccess'
 import Login from '@/views/Login'
 import TemplateDirective from '@/views/TemplateDirective'
+import Transition from '@/views/Transition'
 
 const routes = [
+  {
+    path: '/transition',
+    name: 'Transition',
+    component: Transition
+  },
   {
     path: '/template-directive',
     name: 'TemplateDirective',
