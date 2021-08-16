@@ -27,18 +27,50 @@
       <div :key="count">{{count}}</div>
     </transition>
   </div>
+  <div>
+    <button @click="order = !order">change list</button>
+    <transition-group tag="ul" name="list">
+      <li v-for="item in sortedList" :key="item.id">{{item.id}} : {{item.name}}, price: {{item.price}}</li>
+    </transition-group>
+  </div>
+  <div>
+    <button @click="toggle = !toggle">Toggle</button>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <transition name="svg">
+        <circle cx="80" cy="75" r="50" :fill="fill" :key="fill"></circle>
+      </transition>
+    </svg>
+  </div>
 </template>
 <script>
   export default {
     name: '',
-    components: {},
+    components: {
+    },
     data() {
       return {
+        toggle: false,
+        order: false,
+        list: [
+          { id: 1, name: 'apple', price: 100 },
+          { id: 2, name: 'banana', price: 200 },
+          { id: 3, name: 'melon', price: 300 },
+          { id: 4, name: 'orange', price: 400 }
+        ],
         count: 0,
         abs: true,
         show: true,
         rightleft: true
       };
+    },
+    computed: {
+      fill() {
+        return this.toggle ? 'dodgerblue' : 'lightpink'
+      },
+
+      sortedList() {
+        return this.list.slice(0).sort(this.order ? (a, b) => a.price - b.price : (a, b) => b.price - a.price)
+      }
     },
     setup() {},
     created() {},
@@ -48,6 +80,24 @@
   }
 </script>
 <style scoped>
+  .svg-enter-active, .svg-leave-active {
+    transition: all 1s;
+  }
+
+  .svg-leave-active {
+    position: absolute;
+  }
+
+  .svg-enter, .svg-leave-to {
+    opacity: 0;
+    transform: translateX(-20px)
+  }
+
+  .list-move {
+    transition: transform 1s;
+  }
+
+
   .abs {
     width: 100px;
     height: 100px;
