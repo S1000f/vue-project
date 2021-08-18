@@ -4,7 +4,7 @@ import router from './router'
 import mixins from './mixins'
 import i18nPlugin from './plugins/i18n'
 import localeString from './plugins/localeString'
-import store from './store'
+import store from './store.js'
 
 const i18nStrings = {
   en: {

@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 
-const store = createStore({
+const storeA = {
+  namespaced: true,
   state() {
     return {
       count: 0,
@@ -26,13 +27,43 @@ const store = createStore({
 
     setMessage: (state, payload) => 
       state.message = payload
-    
+
   },
 
   actions: {
     doUpdate({ commit }, message) {
       commit('setMessage', message);
     }
+  }
+}
+
+const storeB = {
+  namespaced: true,
+  state() {
+    return {
+      count: 10
+    }
+  },
+
+  getters: {
+    getCount: (state) => state.count
+  },
+
+  mutations: {
+    increment: state => state.count++
+  },
+
+  actions: {
+    doUpdate({ commit }) {
+      commit('increment')
+    }
+  }
+}
+
+const store = createStore({
+  modules: {
+    storeA,
+    storeB
   }
 })
 

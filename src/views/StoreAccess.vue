@@ -2,10 +2,11 @@
    <div>
      <p>count : {{count}}</p>
      <button type="button" @click="increment()">increment</button>
+     <p>count in storeB: {{ countB }}</p>
    </div>
    <div>
      <p>{{ message }}</p>
-     <input type="text" :value="message" @input="doUpdate" /> 
+     <input type="text" v-model="message" @input="doUpdate" /> 
    </div>
 </template>
 <script>
@@ -13,14 +14,20 @@
     name: '',
     components: {},
     computed: {
-      count() {
-        return this.$store.state.count;
+      countB() {
+        return this.$store.state.storeB.count
       },
 
-      message() {
-        return this.$store.getters.message
+      count() {
+        return this.$store.state.storeA.count
+      },
+
+      message: {
+        get() { return this.$store.getters['storeA/message'] },
+        set(value) { this.$store.dispatch('storeA/doUpdate', value) }
       }
     },
+
     data() {
       return {
         sampleData: ''
@@ -32,11 +39,11 @@
     unmounted() {},
     methods: {
       increment() {
-        this.$store.commit('increment');
+        this.$store.commit('storeA/increment');
       },
 
-      doUpdate(event) {
-        this.$store.dispatch('doUpdate', event.target.value)
+      doUpdate() {
+        this.$store.dispatch('storeB/doUpdate')
       }
     }
   }
