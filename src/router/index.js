@@ -14,8 +14,40 @@ import StoreAccess from '@/views/StoreAccess'
 import Login from '@/views/Login'
 import TemplateDirective from '@/views/TemplateDirective'
 import Transition from '@/views/Transition'
+import Route from '@/views/Route'
+import Product from '@/components/Product'
+import ProductReview from '@/components/product/Review'
+import ProductReviewDetail from '@/components/product/ReviewDetail'
 
 const routes = [
+  {
+    path: '/product/:id',
+    component: Product,
+    props: route => ({ id: Number(route.params.id)} ),
+    children: [
+      // featuring a default route
+
+      {
+        name: 'product-review',
+        path: 'review',
+        component: ProductReview
+      },
+      {
+        name: 'review-detail',
+        path: 'review/:rid',
+        component: ProductReviewDetail
+      }
+    ]
+  },
+  {
+    path: '/route',
+    component: Route
+  },
+  {
+    path: '/route/:id',
+    component: Route,
+    props: route => ({ id: Number(route.params.id) })
+  },
   {
     path: '/transition',
     name: 'Transition',

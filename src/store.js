@@ -1,4 +1,33 @@
 import { createStore } from 'vuex'
+import mock from '@/mock'
+
+const products = {
+  namespaced: true,
+  state: {
+    detail: {}
+  },
+
+  getters: {
+    detail: state => state.detail
+  },
+
+  mutations: {
+    set(state, { detail }) { state.detail = detail },
+    clear(state) { state.detail = {} }
+  },
+
+  actions: {
+    load({ commit }, id) {
+      mock.asyncFind(id, detail => {
+        commit('set', { detail });
+      })
+    },
+
+    destroy({ commit }) {
+      commit('clear');
+    }
+  }
+}
 
 const storeA = {
   namespaced: true,
@@ -63,7 +92,8 @@ const storeB = {
 const store = createStore({
   modules: {
     storeA,
-    storeB
+    storeB,
+    products
   }
 })
 
